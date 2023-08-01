@@ -1,6 +1,5 @@
 <script>
 	export let path = '';
-	import { page } from '$app/stores';
 
 	$: path = path;
 
@@ -9,14 +8,16 @@
 	segments = segments.map((word) => word.replace(/^\d+-/, ''));
 </script>
 
-<div class="text-sm breadcrumbs">
+<div class="text-sm breadcrumbs pl-2 pt-4 sm:pl-8 sm:pt-6 bg-slate-800">
 	<ul>
 		{#each segments as segment, index (segment)}
-			<li>
-				{#if index === 0}
-					<a href="/">Home </a>
+			<li class="capitalize">
+				{#if index === segments.length - 1}
+					{segment || 'Home'}
+				{:else if index === 0}
+					<a class="capitalize" href="/">Home</a>
 				{:else}
-					<a href={segments.slice(0, index + 1).join('/')}>
+					<a class="capitalize" href={segments.slice(0, index + 1).join('/')}>
 						{segment}
 					</a>
 				{/if}
