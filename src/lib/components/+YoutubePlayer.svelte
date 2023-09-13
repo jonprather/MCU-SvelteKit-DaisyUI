@@ -25,7 +25,7 @@
 <style>
 	.video-responsive {
 		position: relative;
-		padding-bottom: 56.25%; /* Aspect ratio */
+		padding-bottom: 56.25%;
 		height: 0;
 		overflow: hidden;
 		object-position: cover;

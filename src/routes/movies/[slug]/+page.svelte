@@ -8,8 +8,6 @@
 	export let data: PageData;
 	let filmId = Number($page.params.slug.split('-')[0]);
 	let film = data.films.find((film) => film.id === filmId);
-	// TODO this is overeager needs to match not just the start ie 36-blade
-	// it gets the 3 and goes to iron man 2 (which is id 3) very jankily
 
 	const { release_date, phase, duration, chronology } = film as MovieDetail;
 
